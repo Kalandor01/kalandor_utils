@@ -15,7 +15,7 @@ def imput(ask="Num: ", type=int):
 
 def timed_input(time=5000):
     """
-    Runs a function after a scecified nomber of millisecounds
+    Runs a function after a scecified nomber of millisecounds.
     """
     from time import sleep
     import threading
