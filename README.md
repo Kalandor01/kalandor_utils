@@ -1,0 +1,1 @@
+This module contains some miscellaneous functions that couldn't fit into other modules.
