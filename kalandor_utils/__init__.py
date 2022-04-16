@@ -13,11 +13,22 @@ def imput(ask="Num: ", type=int):
         except ValueError: print(f'Not{" whole" if type == int else ""} number!')
 
 
-def timed_input(time=5000):
+def _timed_input(text="Quick: ", time=3000):
     """
-    Runs a function after a scecified nomber of millisecounds.
+    Runs a function after a scecified number of millisecounds.
     """
     from time import sleep
-    import threading
+    from concurrent.futures import ThreadPoolExecutor 
+
+    def t_input(text:str):
+        res = -1
+        res = input()
+        return res
+
+    future = ThreadPoolExecutor().submit(t_input, text)
+    return_value = future.result()
 
     sleep(time/1000)
+    if return_value == -1:
+        print("\n")
+    return return_value
